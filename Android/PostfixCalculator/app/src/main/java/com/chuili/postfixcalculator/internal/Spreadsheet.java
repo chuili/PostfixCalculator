@@ -186,7 +186,7 @@ public class Spreadsheet {
                     || data[0].matches("[0-9]+.[0-9]+")
                     || a.matches("\\-[0-9]+")) {
                 stack.push(Double.parseDouble(a));
-            } else if (a.matches("[A-Z][0-9]+")) {
+            } else if (a.matches("[A-Za-z][0-9]+")) {
                 int rowIndex = alphabetToArrayIndex(a.charAt(0));
                 String outputData = output[rowIndex][Integer.parseInt(a.substring(1)) - 1];
                 double out = processCellData(outputData);
